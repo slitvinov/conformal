@@ -1,0 +1,14 @@
+load("descriptive")$
+load("distrib")$
+
+eps: 0.05$
+z: [17, 20, 10, 17, 12, 15, 19, 22, 17, 19, 14, 22, 18, 17, 13, 12, 18, 15, 17]$
+
+n: length(z) + 1$
+m: mean(z)$
+s2: var1(z)$
+
+t: quantile_student_t(1 - eps/2, n - 2), numer$
+
+d: t*sqrt(s2)*sqrt(n/(n - 1))$
+[m - d, m + d], numer;
