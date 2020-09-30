@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include <stdlib.h>
+#include <math.h>
 
 enum { M = 1000 };
 static int z[] =
@@ -41,9 +41,8 @@ A(int n, const int *B, int z)
 {
     long m;
     int i;
-
-    m = 0;
+    m = z;
     for (i = 0; i < n; i++)
         m += B[i];
-    return labs(m - n * z) / n;
+    return fabs(m / (n + 1.0) - z);
 }
