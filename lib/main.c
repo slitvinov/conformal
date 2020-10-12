@@ -21,7 +21,7 @@ int conformal_gamma(const char *name, int n, int *z, double eps, int M,
   for (i = 0; i < (int)(sizeof Names / sizeof *Names); i++)
     if (strcmp(Names[i], name) == 0)
       return conformal_gamma0(n, z, eps, M, Functions[i], G);
-  fprintf(stderr, "%s:%d: unknown name '%s'\n", __FILE__, __LINE__, name);
+  fprintf(stderr, "%s:%d: (libconformal) unknown name '%s'\n", __FILE__, __LINE__, name);
   return 1;
 }
 
@@ -79,7 +79,7 @@ static double Amedian(int n, const int *B0, int z) {
   int *B;
 
   if ((B = malloc((n + 1) * sizeof *B)) == NULL) {
-    fprintf(stderr, "%s:%d: malloc failed\n", __FILE__, __LINE__);
+    fprintf(stderr, "%s:%d: (libconformal) malloc failed\n", __FILE__, __LINE__);
     exit(2);
   }
   for (i = 0; i < n; i++)

@@ -1,7 +1,6 @@
 from ctypes import *
 l = cdll.LoadLibrary("./libconformal.so")
 l.conformal_gamma.argtypes = [c_char_p, c_int, POINTER(c_int), c_double, c_int, POINTER(c_int)]
-
 z = [ 17, 20, 10, 17, 12, 15, 19, 22, 17, 19, 14, 22, 18, 17, 13, 12, 18,
       15, 17 ]
 n = len(z)
