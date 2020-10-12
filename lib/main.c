@@ -4,6 +4,7 @@
 #include <stdlib.h>
 #include <string.h>
 
+static const char *me = "libconformal";
 typedef double (*Function)(int, const int *, int);
 static double Amean(int, const int *, int);
 static double Amedian(int, const int *, int);
@@ -21,7 +22,10 @@ int conformal_gamma(const char *name, int n, int *z, double eps, int M,
   for (i = 0; i < (int)(sizeof Names / sizeof *Names); i++)
     if (strcmp(Names[i], name) == 0)
       return conformal_gamma0(n, z, eps, M, Functions[i], G);
-  fprintf(stderr, "%s:%d: (libconformal) unknown name '%s'\n", __FILE__, __LINE__, name);
+  fprintf(stderr, "%s:%d: (%s) unknown method name '%s'\n", __FILE__, __LINE__, me, name);
+  fprintf(stderr, "%s:%d: (%s) possible values are\n", __FILE__, __LINE__, me);
+  for (i = 0; i < (int)(sizeof Names / sizeof *Names); i++)
+    fprintf(stderr, "%s:%d: (%s) '%s'\n", __FILE__, __LINE__, me, Names[i]);
   return 1;
 }
 
