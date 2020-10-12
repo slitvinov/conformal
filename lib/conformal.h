@@ -1,1 +1,1 @@
-int conformal_gamma(int, int *, double, int, /**/ int*);
+int conformal_gamma(const char *, int, int *, double, int, /**/ int *);

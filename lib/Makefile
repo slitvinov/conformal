@@ -2,12 +2,13 @@
 .SUFFIXES: .o .c
 
 PREFIX = $(HOME)/.local
-CCFLAGS = -Ofast -g
-CC = mpicc
+CFLAGS = -Ofast -g
+CC = c99
 LINK = $(CC)
 
 O = \
 main.o\
+quickselect.o\
 
 H = \
 conformal.h
