@@ -3,7 +3,9 @@ import conformal
 
 size = 400
 center = 500
+eps = 0.05
 random.seed(123455)
+
 def gen():
     return int(random.uniform(center - size/2, center + size/2))
 

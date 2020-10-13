@@ -18,8 +18,8 @@ def nxt():
     G = conformal.gamma("nn", z, eps)
     print(conformal.intervals(G), x, x in G)
     ax = conformal.plot(z, G, x)
-    #plt.show()
-    ax.get_figure().savefig("a.svg")
+    plt.show()
+    #ax.get_figure().savefig("a.svg")
     z.append(x)
 
 nxt()
