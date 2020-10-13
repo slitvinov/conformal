@@ -5,7 +5,7 @@ PREFIX = $(HOME)/.local
 CFLAGS = -Ofast -g
 CC = c99
 LINK = $(CC)
-PYTHON = python
+PYTHON = python3
 PYTHON_USER_SITE = `$(PYTHON) -m site --user-site`
 
 O = \
