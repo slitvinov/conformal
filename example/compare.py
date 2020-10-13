@@ -19,7 +19,7 @@ def nxt():
     Gfisher = conformal.fisher(z, eps)
     ax = conformal.plot2(z, (Gnn, Gfisher), x)
     plt.show()
-    #ax.get_figure().savefig("a.svg")
+    #ax.get_figure().savefig("img/compare.svg")
     z.append(x)
 
 nxt()
