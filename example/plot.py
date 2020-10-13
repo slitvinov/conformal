@@ -2,7 +2,7 @@ import random
 import conformal
 import matplotlib.pyplot as plt
 
-mu_sigma = ( (250, 50), (750, 25) )
+mu_sigma = ( (350, 50), (650, 25) )
 prob = (0.25, 0.75)
 eps = 0.05
 random.seed(123455)
