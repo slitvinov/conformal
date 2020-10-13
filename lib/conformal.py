@@ -20,6 +20,15 @@ def ini():
 l, G = ini()
 
 def gamma(name, z, eps):
+    '''Return the conformal prediction set. z is a list-like container of
+    examples, eps is a probability of error, name is a string
+    indicating nonconformity measure, possible values are "nn"
+    (nearest neighbor), "mean", "median".
+
+    >> conformal.gamma("nn", [1, 1, 2, 2, 3, 1, 1], 0.05)
+    {0, 1, 2, 3, 4}
+    '''
+
     from ctypes import c_int, c_char_p
     n = len(z)
     z = (c_int * n)(*z)
