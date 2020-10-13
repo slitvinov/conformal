@@ -59,7 +59,7 @@ def plot(z, G, x, ax = None):
         fig, ax = plt.subplots()
     ax.yaxis.set_major_locator(MaxNLocator(integer=True))
     for a, b in cnt.items():
-        ax.vlines(x=a, ymin=0, ymax=b, linewidth=2)
+        ax.vlines(x=a, ymin=0, ymax=b, linewidth=2, color='blue')
     for a, b in inter:
         ax.hlines(y=0, xmin=a, xmax=b, label='x', linewidth=4, color='green')
     ax.plot(x, 0, color='red', marker='o', markersize=12)
