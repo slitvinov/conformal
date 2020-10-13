@@ -3,7 +3,7 @@ import conformal
 
 size = 400
 center = 500
-eps = 0.05
+eps = 0.1
 random.seed(123455)
 
 def gen():

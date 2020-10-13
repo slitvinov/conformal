@@ -10,7 +10,7 @@ def gen():
     mu, sigma = random.choices(mu_sigma, prob)[0]
     return int(random.gauss(mu, sigma))
 
-z = [ gen(), gen() ]
+z = [ gen(), gen(), gen(), gen(), gen() ]
 def nxt():
     x = gen()
     G = conformal.gamma("nn", z, eps)
