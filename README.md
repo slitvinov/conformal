@@ -14,6 +14,10 @@
 
 ![example image](img/plot.svg)
 
+    $ python3 example/compare.py
+
+![example image](img/compare.svg)
+
 # Documentation
 
     $ python3 -m pydoc conformal.gamma

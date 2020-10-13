@@ -70,16 +70,24 @@ def intervals(G):
     return ans
 
 def plot(z, G, x, ax = None):
+    return plot2(z, [G], x, ax)
+
+def plot2(z, G, x, ax = None):
+    import itertools
+    import numpy as np
     import matplotlib.pyplot as plt
     from matplotlib.ticker import MaxNLocator
+    colors = ['green', 'orange']
     cnt = collections.Counter(z)
-    inter = intervals(G)
     if ax is None:
         fig, ax = plt.subplots()
     ax.yaxis.set_major_locator(MaxNLocator(integer=True))
     for a, b in cnt.items():
         ax.vlines(x=a, ymin=0, ymax=b, linewidth=2, color='blue')
-    for a, b in inter:
-        ax.hlines(y=0, xmin=a, xmax=b, label='x', linewidth=4, color='green')
+    y = 0
+    for g, color in zip(G, itertools.cycle(colors)):
+        for a, b in intervals(g):
+            ax.hlines(y, xmin=a, xmax=b, label='x', linewidth=4, color=color)
+        y += 0.25
     ax.plot(x, 0, color='red', marker='o', markersize=12)
     return ax
