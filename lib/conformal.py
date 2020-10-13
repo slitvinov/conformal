@@ -1,6 +1,7 @@
 import os
 import sys
 import collections
+import statistics
 
 me = "conformal.py"
 M = 1000
@@ -18,6 +19,14 @@ def ini():
     return l, G
 
 l, G = ini()
+def fisher(z, eps):
+    import scipy.stats
+    n =  len(z) + 1
+    m = statistics.mean(z)
+    s2 = statistics.variance(z)
+    t = scipy.stats.t.ppf(1 - eps/2, n - 2)
+    d = t * math.sqrt(s2) * math.sqrt(n/(n - 1))
+    return set(i for i in range(M) if m - d < i <= m + d)
 
 def gamma(name, z, eps):
     '''Return the conformal prediction set. z is a list-like container of
