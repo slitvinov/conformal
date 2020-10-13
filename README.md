@@ -9,6 +9,8 @@
    z G x correct?: [396, 405, 500, 446] [(332, 505)] 562 False
    $ python3 example/plot.py
 
+![example image](img/plot.png)
+
 # References
 
 - Shafer, G., and Vovk, V. "A tutorial on conformal prediction."
