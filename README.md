@@ -30,7 +30,7 @@
 
 # References
 
-- Shafer, G., and Vovk, V. "A tutorial on conformal prediction."
+- Shafer, G. and Vovk, V. "A tutorial on conformal prediction."
   Journal of Machine Learning Research 9.Mar (2008): 371-421.
   [pdf](https://jmlr.csail.mit.edu/papers/volume9/shafer08a/shafer08a.pdf)
 
