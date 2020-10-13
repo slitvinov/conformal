@@ -18,20 +18,22 @@
 
     $ python3 -m pydoc conformal.gamma
     Help on function gamma in conformal:
-    
+
     conformal.gamma = gamma(name, z, eps)
-        Return the conformal prediction set. z is a list-like container of
-        examples, eps is a probability of error, name is a string
-        indicating nonconformity measure, possible values are "nn"
-        (nearest neighbor), "mean", "median".
-    
-        >> conformal.gamma("nn", [1, 1, 2, 2, 3, 1, 1], 0.05)
-        {0, 1, 2, 3, 4}
+	Return the conformal prediction set. z is a list-like container of
+	examples, eps is a probability of error, name is a string
+	indicating nonconformity measure, possible values are "nn"
+	(nearest neighbor), "mean", "median".
+
+	>> conformal.gamma("nn", [1, 1, 2, 2, 3, 1, 1], 0.05)
+	{0, 1, 2, 3, 4}
 
 # References
 
 - Shafer, G., and Vovk, V. "A tutorial on conformal prediction."
-  Journal of Machine Learning Research 9.Mar (2008): 371-421.
+  Journal of Machine Learning Research 9.Mar (2008): 371-421.<br>
+  <a href="https://jmlr.csail.mit.edu/papers/volume9/shafer08a/shafer08a.pdf>pdf</a>
 
 - Vovk, V., Gammerman, A., & Shafer, G. (2005). Algorithmic learning
-  in a random world. Springer Science & Business Media.
+  in a random world. Springer Science & Business Media.<br>
+  <a href="http://alrw.net>alrw.net</a>
