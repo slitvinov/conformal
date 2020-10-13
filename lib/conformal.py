@@ -27,3 +27,19 @@ def gamma(name, z, eps):
         if e == 1:
             ans.add(i)
     return ans
+
+def intervals(G):
+    ans = 0
+    i = 0
+    ans = [ ]
+    while True:
+        while i <  M and i not in G:
+            i += 1
+        if not i < M:
+            break
+        j = i
+        while j < M and j in G:
+            j += 1
+        ans.append((i, j))
+        i = j
+    return ans

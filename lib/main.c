@@ -88,7 +88,7 @@ static double Amedian(int n, const int *B0, int z) {
   }
   for (i = 0; i < n; i++)
     B[i] = B0[i];
-  B[i + 1] = z;
+  B[n] = z;
   m = quick_select(n + 1, B);
   free(B);
   return abs(m - z);
