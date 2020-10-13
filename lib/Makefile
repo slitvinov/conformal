@@ -22,7 +22,7 @@ L = libconformal.so
 $L: $O; $(LINK) $O $(LDFLAGS) -shared $(M_LDFLAGS) -o $@
 .c.o:; $(CC) -c -fPIC $(CFLAGS) $<
 install: $L $H $P
-	mkdir -p $(PREFIX)/lib $(PREFIX)/include && \
+	mkdir -p $(PREFIX)/lib $(PREFIX)/include $(PYTHON_USER_SITE) && \
 	cp $P "$(PYTHON_USER_SITE)" && \
 	cp $L $(PREFIX)/lib && \
 	cp $H $(PREFIX)/include
