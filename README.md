@@ -1,7 +1,8 @@
-# Fisher's prediction interval
+# Install
 
-- [211.mac](211.mac)
-- [211.py](211.py)
+   $ (cd lib && make)
+   $ python example/gauss.py
+   $ python example/plot.py
 
 # References
 

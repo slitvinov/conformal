@@ -1,11 +1,11 @@
 import os
 import sys
 import collections
-from ctypes import cdll, c_char_p, c_int, c_double, POINTER
 
 me = "conformal.py"
 M = 1000
 def ini():
+    from ctypes import cdll, c_char_p, c_int, c_double, POINTER
     prefix = os.path.join(os.environ['HOME'], ".local")
     path = os.path.join(prefix, "lib", "libconformal.so")
     try:
@@ -20,6 +20,7 @@ def ini():
 l, G = ini()
 
 def gamma(name, z, eps):
+    from ctypes import c_int, c_char_p
     n = len(z)
     z = (c_int * n)(*z)
     name = c_char_p(name.encode('utf-8'))
