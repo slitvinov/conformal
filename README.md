@@ -11,7 +11,8 @@
     z G x correct?: [396, 405, 500] [(301, 510)] 446 True
     z G x correct?: [396, 405, 500, 446] [(332, 505)] 562 False
     $ python3 example/plot.py
-    ![example image](img/plot.svg)
+
+![example image](img/plot.svg)
 
 # Documentation
 
@@ -19,13 +20,13 @@
     Help on function gamma in conformal:
     
     conformal.gamma = gamma(name, z, eps)
-	Return the conformal prediction set. z is a list-like container of
-	examples, eps is a probability of error, name is a string
-	indicating nonconformity measure, possible values are "nn"
-	(nearest neighbor), "mean", "median".
+        Return the conformal prediction set. z is a list-like container of
+        examples, eps is a probability of error, name is a string
+        indicating nonconformity measure, possible values are "nn"
+        (nearest neighbor), "mean", "median".
     
-	>> conformal.gamma("nn", [1, 1, 2, 2, 3, 1, 1], 0.05)
-       {0, 1, 2, 3, 4}
+        >> conformal.gamma("nn", [1, 1, 2, 2, 3, 1, 1], 0.05)
+        {0, 1, 2, 3, 4}
 
 # References
 
