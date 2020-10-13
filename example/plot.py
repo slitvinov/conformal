@@ -11,7 +11,7 @@ def gen():
     mu, sigma = random.choices(mu_sigma, prob)[0]
     return int(random.gauss(mu, sigma))
 
-z = [gen() for i in range(100)]
+z = [gen() for i in range(75)]
 def nxt():
     plt.close()
     x = gen()
@@ -20,6 +20,5 @@ def nxt():
     conformal.plot(z, G, x)
     plt.show()
     z.append(x)
-    return x, G
 
 nxt()

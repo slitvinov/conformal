@@ -1,20 +1,24 @@
 import os
 import sys
 import collections
-from ctypes import *
+from ctypes import cdll, c_char_p, c_int, c_double, POINTER
 
 me = "conformal.py"
-prefix = os.path.join(os.environ['HOME'], ".local")
-path = os.path.join(prefix, "lib", "libconformal.so")
-try:
-    l = cdll.LoadLibrary(path)
-except OSError:
-    sys.stderr.write("%s: cannot find or open '%s'\n" % (me, path))
-    raise
-l.conformal_gamma.argtypes = [c_char_p, c_int, POINTER(c_int), c_double, c_int, POINTER(c_int)]
-
 M = 1000
-G = (c_int * M)()
+def ini():
+    prefix = os.path.join(os.environ['HOME'], ".local")
+    path = os.path.join(prefix, "lib", "libconformal.so")
+    try:
+        l = cdll.LoadLibrary(path)
+    except OSError:
+        sys.stderr.write("%s: cannot find or open '%s'\n" % (me, path))
+        raise
+    l.conformal_gamma.argtypes = [c_char_p, c_int, POINTER(c_int), c_double, c_int, POINTER(c_int)]
+    G = (c_int * M)()
+    return l, G
+
+l, G = ini()
+
 def gamma(name, z, eps):
     n = len(z)
     z = (c_int * n)(*z)
