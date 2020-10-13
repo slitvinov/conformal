@@ -1,15 +1,15 @@
 # Install
 
-   $ (cd lib && make install)
-   $ python3 example/paper.py
-   {10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23}
-   $ python3 example/gauss.py
-   z G x correct?: [396, 405] [(387, 415)] 500 False
-   z G x correct?: [396, 405, 500] [(301, 510)] 446 True
-   z G x correct?: [396, 405, 500, 446] [(332, 505)] 562 False
-   $ python3 example/plot.py
+    $ (cd lib && make install)
+    $ python3 example/paper.py
+    {10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23}
+    $ python3 example/gauss.py
+    z G x correct?: [396, 405] [(387, 415)] 500 False
+    z G x correct?: [396, 405, 500] [(301, 510)] 446 True
+    z G x correct?: [396, 405, 500, 446] [(332, 505)] 562 False
+    $ python3 example/plot.py
 
-![example image](img/plot.png)
+![example image](img/plot.svg)
 
 # References
 
