@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include "conformal.h"
 
 static const char *me = "libconformal";
 typedef double (*Function)(int, const int *, int);

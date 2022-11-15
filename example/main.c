@@ -16,7 +16,7 @@ main(int argc, const char **argv)
   int z[] = {17, 20, 10, 17, 12, 15, 19, 22, 17, 19, 14, 22, 18, 17, 13, 12, 18, 15, 17};
   argv++;
   if (*argv == NULL) {
-    fprintf(stderr, "%s: needs a method name\n", me);
+    fprintf(stderr, "%s: needs a method name (mean, median, or nn)\n", me);
     exit(2);
   }
   name = *argv++;
