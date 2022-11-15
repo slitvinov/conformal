@@ -1,7 +1,8 @@
-.POSIX:
-.SUFFIXES: .o .c
+.POSIX:.
+.SUFFIXES:
+.SUFFIXES: .o
+.SUFFIXES: .c
 
-PREFIX = $(HOME)/.local
 CFLAGS = -Ofast -g
 CC = c99
 LINK = $(CC)
@@ -12,20 +13,15 @@ O = \
 main.o\
 quickselect.o\
 
-H = \
-conformal.h
-
 P = \
 conformal.py
 
 L = libconformal.so
-$L: $O; $(LINK) $O $(LDFLAGS) -shared $(M_LDFLAGS) -o $@
+$L: $O; $(LINK) $O $(LDFLAGS) -shared -o $@
 .c.o:; $(CC) -c -fPIC $(CFLAGS) $<
 install: $L $H $P
-	mkdir -p $(PREFIX)/lib $(PREFIX)/include $(PYTHON_USER_SITE) && \
-	cp $P "$(PYTHON_USER_SITE)" && \
-	cp $L $(PREFIX)/lib && \
-	cp $H $(PREFIX)/include
+	mkdir -p "$(PYTHON_USER_SITE)" && \
+	cp $P $L "$(PYTHON_USER_SITE)"
 
 main.o: $H
 clean:; rm -f -- $L $O
