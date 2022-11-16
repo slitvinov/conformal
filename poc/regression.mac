@@ -1,0 +1,20 @@
+declare(Sum, linear);
+declare([xy, xx, be, mx, my, n], constant);
+matchdeclare(C, constantp);
+tellsimpafter(Sum(C), n * C);
+tellsimpafter(Sum(x^2), xx);
+tellsimpafter(Sum(y^2), yy);
+tellsimpafter(Sum(x), n * mx);
+tellsimpafter(Sum(y), n * my);
+
+matchdeclare(P, lambda([e], not atom(e) and op(e) = "*" and sort(args(e)) = [x, y]));
+tellsimpafter(Sum(P), xy);
+
+E: Sum( (be * (x + mx) - (y + my))^2 );
+E: expand(E);
+
+kill(be);
+so: linsolve(diff(E, be), be);
+
+P: s^(-n/2) * exp(-1/(2 * s) * sq);
+expand(log(P)), logexpand: all;
