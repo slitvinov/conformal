@@ -7,35 +7,35 @@ M = 1000
 
 
 def A(B, z):
-	return abs(statistics.mean(B) - z)
+    return abs(statistics.mean(B) - z)
 
 
 def A(B, z):
-	return abs(statistics.median(B) - z)
+    return abs(statistics.median(B) - z)
 
 
 def A(B, z):
-	return min(abs(b - z) for b in B)
+    return min(abs(b - z) for b in B)
 
 
 def pz(z, zn):
-	an = A(z, zn)
-	z = z + [zn]
-	cnt = 0
-	for i, zi in enumerate(z):
-		ai = A(z[:i] + z[i + 1:], zi)
-		if ai >= an:
-			cnt += 1
-	return cnt / len(z)
+    an = A(z, zn)
+    z = z + [zn]
+    cnt = 0
+    for i, zi in enumerate(z):
+        ai = A(z[:i] + z[i + 1:], zi)
+        if ai >= an:
+            cnt += 1
+    return cnt / len(z)
 
 
 def G(z):
-	ans = []
-	for zn in range(M):
-		p = pz(z, zn)
-		if p > eps:
-			ans.append(zn)
-	return ans
+    ans = []
+    for zn in range(M):
+        p = pz(z, zn)
+        if p > eps:
+            ans.append(zn)
+    return ans
 
 
 Z = [

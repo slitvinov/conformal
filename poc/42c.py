@@ -10,25 +10,25 @@ M = 1000
 
 
 def A(B, z):
-	z0 = statistics.mean(B)
-	ans = abs(z0 - z)
-	return ans
+    z0 = statistics.mean(B)
+    ans = abs(z0 - z)
+    return ans
 
 
 def G(z):
-	ans = set()
-	for zn in range(M):
-		an = A(z, zn)
-		cnt = 0
-		for i, zi in enumerate(z):
-			z[i] = zn
-			ai = A(z, zi)
-			z[i] = zi
-			if ai >= an:
-				cnt += 1
-		if cnt > eps * len(z):
-			ans.add(zn)
-	return ans
+    ans = set()
+    for zn in range(M):
+        an = A(z, zn)
+        cnt = 0
+        for i, zi in enumerate(z):
+            z[i] = zn
+            ai = A(z, zi)
+            z[i] = zi
+            if ai >= an:
+                cnt += 1
+        if cnt > eps * len(z):
+            ans.add(zn)
+    return ans
 
 
 Z = [
@@ -37,8 +37,8 @@ Z = [
 
 
 def gen():
-	#return Z.pop()
-	return int(random.gauss(mu, sigma))
+    #return Z.pop()
+    return int(random.gauss(mu, sigma))
 
 
 mu = 500
@@ -48,13 +48,13 @@ z = []
 z.append(gen())
 correct = total = 0
 for i in range(n - 1):
-	x = gen()
-	g = G(z)
-	print("%03d-%03d" % (min(g), max(g)))
-	if x in g:
-		correct += 1
-	total += 1
-	print("%03d/%03d = %.0f" % (correct, total, correct / total * 100))
-	z.append(x)
+    x = gen()
+    g = G(z)
+    print("%03d-%03d" % (min(g), max(g)))
+    if x in g:
+        correct += 1
+    total += 1
+    print("%03d/%03d = %.0f" % (correct, total, correct / total * 100))
+    z.append(x)
 
 print(correct / total)
